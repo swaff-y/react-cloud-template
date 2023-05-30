@@ -2,6 +2,8 @@
 
 set -e
 
+docker build -t sample:dev .
+
 docker run \
     -it \
     --rm \
