@@ -4,6 +4,5 @@ steps:
       - "sh .buildkite/scripts/build_and_test.sh"
     agents:
       queue: default
-
-    agents:
-      queue: default
+    artifact_paths:
+      - coverage

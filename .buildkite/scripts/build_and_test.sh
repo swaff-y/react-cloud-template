@@ -4,7 +4,7 @@ set -e
 
 docker build -t react-cloud-template:dev .
 
-docker run react-cloud-template:dev npm test
+docker run --rm react-cloud-template:dev npm test &> coverage
 
 # if [ "$BUILDKITE_BRANCH" == "main"  ]
 # then
