@@ -1,7 +1,8 @@
 steps:
   - label: ":computer: run tests"
     commands:
-      - CI=true npm test -- --coverage &> test_results
+      - export CI=true
+      - npm test -- --coverage &> test_results
     agents:
       queue: default
     artifact_paths:
