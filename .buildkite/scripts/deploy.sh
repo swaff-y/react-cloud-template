@@ -2,5 +2,5 @@
 
 set -e
 
-buildkite-agent artifact download "${pwd}/build.zip"
+buildkite-agent artifact download build.zip .
 ls
