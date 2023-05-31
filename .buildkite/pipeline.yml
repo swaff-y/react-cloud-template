@@ -1,8 +1,8 @@
 steps:
   - label: ":computer: run tests"
     commands:
-      - export CI=true
-      - npm test -- --coverage &> test_results
+      - "export CI=true"
+      - "npm test -- --coverage &> test_results"
     agents:
       queue: default
     artifact_paths:
@@ -13,8 +13,8 @@ steps:
 
   - name: ':package: Build'
     commands:
-      - npm run build
-      - zip -r build.zip build
+      - "npm run build"
+      - "zip -r build.zip build"
     agents:
       queue: default
     artifact_paths:
@@ -25,6 +25,6 @@ steps:
 
   - name: ':desert_island: Deploy'
     commands:
-      - ls
+      - "ls"
     agents:
       queue: default
