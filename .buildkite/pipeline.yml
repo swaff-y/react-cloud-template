@@ -10,6 +10,17 @@ steps:
   - wait: ~
     continue_on_failure: false
 
+  - name: ':desert_island: Parse Results'
+    commands:
+      - "sh .buildkite/scripts/parse.sh"
+    agents:
+      queue: default
+    artifact_paths:
+      - "build.zip"
+
+  - wait: ~
+    continue_on_failure: false
+
   - name: ':package: Build'
     commands:
       - "sh .buildkite/scripts/build.sh"
