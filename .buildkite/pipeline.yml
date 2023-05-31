@@ -1,8 +1,7 @@
 steps:
   - label: ":computer: run tests"
     commands:
-      # - "export CI=true"
-      - "npm test -- --coverage &> test_results"
+      - "sh .buildkite/scripts/tests.sh"
     agents:
       queue: default
     artifact_paths:
@@ -13,8 +12,7 @@ steps:
 
   - name: ':package: Build'
     commands:
-      - "npm run build"
-      - "zip -r build.zip build"
+      - "sh .buildkite/scripts/build.sh"
     agents:
       queue: default
     artifact_paths:
@@ -25,6 +23,6 @@ steps:
 
   - name: ':desert_island: Deploy'
     commands:
-      - "ls"
+      - "sh .buildkite/scripts/deploy.sh"
     agents:
       queue: default
