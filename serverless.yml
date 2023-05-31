@@ -2,7 +2,7 @@ service: react-cloud-template
 
 provider:
   name: aws
-  runtime: ruby2.7
+  runtime: nodejs12.x
   profile: default
   stage: dev
   region: ap-southeast-2

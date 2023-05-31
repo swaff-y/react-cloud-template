@@ -1,8 +1,29 @@
 steps:
-  - label: ":package: run tests"
+  - label: ":computer: run tests"
     commands:
-      - "sh .buildkite/scripts/build_and_test.sh"
+      - CI=true npm test -- --coverage &> test_results
     agents:
       queue: default
     artifact_paths:
-      - coverage
+      - test_results
+
+  - wait: ~
+    continue_on_failure: false
+
+  - name: ':package: Build'
+    commands:
+      - npm run build
+      - zip -r build.zip build
+    agents:
+      queue: default
+    artifact_paths:
+      - "build.zip"
+
+  - wait: ~
+    continue_on_failure: false
+
+  - name: ':desert_island: Deploy'
+    commands:
+      - ls
+    agents:
+      queue: default
