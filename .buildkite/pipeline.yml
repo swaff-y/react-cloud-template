@@ -1,7 +1,6 @@
 steps:
   - label: ":computer: run tests"
     commands:
-      - ls
       - "sh .buildkite/scripts/tests.sh"
     agents:
       queue: default
