@@ -1,7 +1,7 @@
 steps:
   - label: ":computer: run tests"
     commands:
-      - "export CI=true"
+      # - "export CI=true"
       - "npm test -- --coverage &> test_results"
     agents:
       queue: default
