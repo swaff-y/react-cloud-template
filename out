@@ -1,0 +1,105 @@
+{
+  "numFailedTestSuites": 0,
+  "numFailedTests": 0,
+  "numPassedTestSuites": 1,
+  "numPassedTests": 1,
+  "numPendingTestSuites": 0,
+  "numPendingTests": 0,
+  "numRuntimeErrorTestSuites": 0,
+  "numTodoTests": 0,
+  "numTotalTestSuites": 1,
+  "numTotalTests": 1,
+  "openHandles": [],
+  "snapshot": {
+    "added": 0,
+    "didUpdate": false,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0
+  },
+  "startTime": 1685624498257,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "failureMessages": [],
+          "fullName": "renders learn react link",
+          "location": null,
+          "status": "passed",
+          "title": "renders learn react link"
+        }
+      ],
+      "endTime": 1685624498861,
+      "message": "",
+      "name": "/Users/kyleswaffield/sei/react_cloud_template/src/App.test.js",
+      "startTime": 1685624498564,
+      "status": "passed",
+      "summary": ""
+    }
+  ],
+  "wasInterrupted": false,
+  "coverageMap": {
+    "/Users/kyleswaffield/sei/react_cloud_template/src/App.js": {
+      "path": "/Users/kyleswaffield/sei/react_cloud_template/src/App.js",
+      "statementMap": {
+        "0": {
+          "start": {
+            "line": 5,
+            "column": 2
+          },
+          "end": {
+            "line": 22,
+            "column": 4
+          }
+        }
+      },
+      "fnMap": {
+        "0": {
+          "name": "App",
+          "decl": {
+            "start": {
+              "line": 4,
+              "column": 9
+            },
+            "end": {
+              "line": 4,
+              "column": 12
+            }
+          },
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 15
+            },
+            "end": {
+              "line": 23,
+              "column": 1
+            }
+          },
+          "line": 4
+        }
+      },
+      "branchMap": {},
+      "s": {
+        "0": 1
+      },
+      "f": {
+        "0": 1
+      },
+      "b": {},
+      "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+      "hash": "2d02d9da90552e9bd4edbc0c0e590e1b833cde86"
+    }
+  }
+}

@@ -15,8 +15,6 @@ steps:
       - "sh .buildkite/scripts/parse.sh"
     agents:
       queue: default
-    artifact_paths:
-      - "build.zip"
 
   - wait: ~
     continue_on_failure: false
