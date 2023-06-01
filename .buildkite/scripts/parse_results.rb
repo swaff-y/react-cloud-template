@@ -4,7 +4,7 @@ require 'json'
 
 def check_results(data)
   failed_tests = data['numFailedTests']
-  return puts "\33[32;37mTests Passed\33[0m" unless data['numFailedTests'].to_i <= 0
+  return puts "\33[32;37mTests Passed\33[0m" unless data['numFailedTests']&.to_i&.positive?
 
   puts "Number of failed tests: #{failed_tests}"
   exit(1)
