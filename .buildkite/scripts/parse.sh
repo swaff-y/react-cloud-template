@@ -3,4 +3,4 @@
 set -e
 
 buildkite-agent artifact download test_results .
-./parse_results.rb test_results
+./.buildkite/scripts/parse_results.rb test_results
