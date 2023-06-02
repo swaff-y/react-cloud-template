@@ -5,4 +5,5 @@ set -e
 buildkite-agent artifact download build.zip .
 unzip build.zip -d .
 npm install
-sls deploy --force
+sls remove
+sls deploy
