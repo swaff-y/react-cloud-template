@@ -11,11 +11,12 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          id="env-link"
+          href="https://fake-url.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          ~{ process.env.REACT_APP_TITLE_ENV }~
         </a>
       </header>
     </div>

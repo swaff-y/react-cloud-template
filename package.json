@@ -19,10 +19,10 @@
     ]
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "west": "./bin/list.sh",
+    "start": "react-app-env --env-file=dev.env start",
+    "build:prod": "react-app-env --env-file=prod.env build",
+    "build:dev": "react-app-env --env-file=dev.env build",
+    "test": "react-app-env test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-app-env": "^1.2.3"
   }
 }
