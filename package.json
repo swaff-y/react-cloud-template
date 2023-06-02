@@ -22,7 +22,7 @@
     "start": "react-app-env --env-file=dev.env start",
     "build:prod": "react-app-env --env-file=prod.env build",
     "build:dev": "react-app-env --env-file=dev.env build",
-    "test": "react-app-env test",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
