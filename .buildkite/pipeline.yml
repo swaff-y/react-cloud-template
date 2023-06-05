@@ -34,4 +34,6 @@ steps:
     commands:
       - "sh .buildkite/scripts/deploy.sh"
     agents:
+    artifact_paths:
+      - "serverless.yml"
       queue: default
