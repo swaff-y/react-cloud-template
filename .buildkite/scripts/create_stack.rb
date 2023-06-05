@@ -6,6 +6,7 @@ def check_results(data)
   return if data.nil?
 
   application = ENV.fetch('APPLICATION', 'react-cloud-template')
+  puts "Zebra: #{application}"
   stage = ENV.fetch('STAGE', 'dev')
   region = ENV.fetch('REGION', 'ap-southeast-2')
   branch = ENV.fetch('BUILDKITE_PIPELINE_NAME', 'dev')
