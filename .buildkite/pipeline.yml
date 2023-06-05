@@ -30,6 +30,17 @@ steps:
   - wait: ~
     continue_on_failure: false
 
+  - name: ':package: Remove'
+    commands:
+      - "sh .buildkite/scripts/remove.sh"
+    agents:
+      queue: default
+    artifact_paths:
+      - "build.zip"
+
+  - wait: ~
+    continue_on_failure: true
+
   - name: ':desert_island: Deploy'
     commands:
       - "sh .buildkite/scripts/deploy.sh"
