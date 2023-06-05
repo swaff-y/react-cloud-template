@@ -35,8 +35,6 @@ steps:
       - "sh .buildkite/scripts/remove.sh"
     agents:
       queue: default
-    artifact_paths:
-      - "build.zip"
 
   - wait: ~
     continue_on_failure: true
