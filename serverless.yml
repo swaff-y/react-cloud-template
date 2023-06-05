@@ -1,42 +1,45 @@
----
-service: ''
+service: $APPLICATION
+
 provider:
   name: aws
   runtime: nodejs14.x
   profile: default
-  stage: dev
-  region: ap-southeast-2
+  stage: $STAGE
+  region: $REGION
+
 plugins:
-- serverless-s3-sync
+  - serverless-s3-sync
+
 custom:
-  bucketName: "-dev"
+  bucketName: $BUCKET_NAME
   s3Sync:
-  - bucketName: "${self:custom.bucketName}"
-    localDir: build/
+    - bucketName: ${self:custom.bucketName}
+      localDir: build/
+
 resources:
   Resources:
     ReactAppBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: "${self:custom.bucketName}"
+        BucketName: ${self:custom.bucketName}
         PublicAccessBlockConfiguration:
           BlockPublicAcls: false
         OwnershipControls:
           Rules:
-          - ObjectOwnership: ObjectWriter
+            - ObjectOwnership: ObjectWriter
         WebsiteConfiguration:
           IndexDocument: index.html
           ErrorDocument: index.html
     S3AccessPolicy:
       Type: AWS::S3::BucketPolicy
-      Properties:
+      Properties: 
         Bucket:
           Ref: ReactAppBucket
         PolicyDocument:
           Statement:
-          - Sid: PublicReadGetObject
-            Effect: Allow
-            Principal: "*"
-            Action:
-            - s3:GetObject
-            Resource: arn:aws:s3:::${self:custom.bucketName}/*
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal: '*'
+              Action:
+                - s3:GetObject
+              Resource: arn:aws:s3:::${self:custom.bucketName}/*
