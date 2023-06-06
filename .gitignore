@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+notes.md
+.serverless
 
 # testing
 /coverage
@@ -17,6 +19,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
+dev.env
+prod.env
 
 npm-debug.log*
 yarn-debug.log*

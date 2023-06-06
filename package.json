@@ -9,11 +9,19 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "serverless-s3-sync": "^3.1.0",
     "web-vitals": "^2.1.4"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js"
+    ]
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-env --env-file=dev.env start",
+    "build:prod": "react-app-env --env-file=prod.env build",
+    "build:dev": "react-app-env --env-file=dev.env build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-app-env": "^1.2.3"
   }
 }
