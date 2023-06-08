@@ -12,7 +12,8 @@ def check_results(data)
   bucket_name = "#{application}-#{branch.downcase}" if stage == 'dev'
   bucket_name = application if stage == 'prod'
 
-  data['service'] = application
+  data['service'] = application unless stage == 'dev'
+  data['service'] = "#{application}-#{branch}" if stage == 'dev'
   data['provider']['stage'] = stage
   data['provider']['region'] = region
   data['custom']['bucketName'] = bucket_name
