@@ -51,12 +51,13 @@ steps:
 
   - wait: ~
     continue_on_failure: true
+    branches: "!main"
 
   - block: ':bomb: Remove Stack'
+    branches: "!main"
 
   - name: ':gun: Remove'
-    if: |
-      build.branch !~ /^main$/
+    branches: "!main"
     commands:
       - "buildkite-agent artifact download build.zip ."
       - "rm serverless.yml"
