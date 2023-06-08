@@ -30,7 +30,7 @@ steps:
   - wait: ~
     continue_on_failure: false
 
-  - name: ':package: Remove'
+  - name: ':gun: Remove'
     commands:
       - "sh .buildkite/scripts/remove.sh"
     agents:
@@ -48,4 +48,25 @@ steps:
       queue: default
     artifact_paths:
       - "serverless.yml"
+
+  - wait: ~
+    continue_on_failure: true
+    if: |
+      build.branch !~ /^main$/
+
+  - block: ':bomb: Remove Stack'
+    if: |
+      build.branch !~ /^main$/
+
+  - name: ':gun: Remove'
+    if: |
+      build.branch !~ /^main$/
+    commands:
+      - "buildkite-agent artifact download build.zip ."
+      - "rm serverless.yml"
+      - "unzip build.zip -d ."
+      - "npm install"
+      - "sls remove"
+    agents:
+      queue: default
       
