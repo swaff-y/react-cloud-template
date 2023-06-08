@@ -51,12 +51,8 @@ steps:
 
   - wait: ~
     continue_on_failure: true
-    if: |
-      build.branch !~ /^main$/
 
   - block: ':bomb: Remove Stack'
-    if: |
-      build.branch !~ /^main$/
 
   - name: ':gun: Remove'
     if: |
