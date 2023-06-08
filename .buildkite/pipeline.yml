@@ -30,6 +30,9 @@ steps:
   - wait: ~
     continue_on_failure: false
 
+  - block: ':computer: Deploy stack?'
+    branches: "!main"
+
   - name: ':gun: Remove'
     commands:
       - "sh .buildkite/scripts/remove.sh"
